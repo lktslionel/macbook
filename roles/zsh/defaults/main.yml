@@ -1,0 +1,5 @@
+---
+
+zsh_theme: dst
+zsh_custom_entries: 
+  - source $HOME/.profile

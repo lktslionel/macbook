@@ -1,0 +1,33 @@
+---
+- name: install CLI tools
+  homebrew: name={{ item }} state=present
+  with_items:
+    - tree
+    - readline
+    - wget
+    - ack
+    - ctags
+    - sloccount
+    - autoenv
+    - ripgrep
+    - jq
+    - hledger
+    #- hub
+    #- s3cmd
+    #- siege
+  when: ansible_os_family == 'Darwin'
+  tags: utils
+
+- name: Add configuration script
+  file:
+    src: ~/.config.d/roles/utils/files/configure
+    dest: /usr/local/bin/configure
+    state: link
+  tags: utils
+
+- name: Add reconfiguration script
+  file:
+    src: ~/.config.d/roles/utils/files/reconfigure
+    dest: /usr/local/bin/reconfigure
+    state: link
+  tags: utils
