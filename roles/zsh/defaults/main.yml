@@ -1,5 +1,17 @@
 ---
 
 zsh_theme: dst
+zsh_plugins: # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
+  - git
+  - gitignore
+  - colorize
+  - cp 
+  - extract
+  - web-search
+  - github
+  - docker
+  - osx
+  - theme
+  - vagrant
 zsh_custom_entries: 
   - source $HOME/.profile
