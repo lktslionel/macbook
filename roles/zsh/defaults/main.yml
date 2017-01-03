@@ -4,6 +4,7 @@ zsh_theme: dst
 zsh_plugins: # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
   - git
   - gitignore
+  - ssh-agent
   - colorize
   - cp 
   - extract
