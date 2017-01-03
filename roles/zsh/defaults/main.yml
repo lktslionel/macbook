@@ -1,6 +1,6 @@
 ---
 
-zsh_theme: dst
+zsh_theme: xxf
 zsh_plugins: # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
   - git
   - gitignore

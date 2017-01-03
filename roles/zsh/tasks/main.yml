@@ -35,6 +35,13 @@
     state: directory
   tags: zsh
 
+- name: Download additional zsh themes
+  get_url: 
+    url: "{{ item }}"
+    dest: "~/.oh-my-zsh/themes/{{ item | basename }}"
+  with_items:
+    - https://raw.githubusercontent.com/xfanwu/oh-my-zsh-custom-xxf/master/themes/xxf.zsh-theme
+
 - name: add zshrc file
   template: 
     src: zshrc.j2
