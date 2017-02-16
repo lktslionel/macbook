@@ -14,5 +14,6 @@ zsh_plugins: # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
   - osx
   - theme
   - vagrant
+  - terraform
 zsh_custom_entries: 
   - source $HOME/.profile
