@@ -1,6 +1,6 @@
 # Macbook
 
-Let's try to use ansible to make your mac ready to rock.
+Let's try to use ansible to make your macbook ready to rock.
 
 ## Install
 
