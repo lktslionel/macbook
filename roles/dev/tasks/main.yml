@@ -1,4 +1,25 @@
 ---
+
+- role: homebrew
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- role: zsh
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- role: common
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- role: docker
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
+- role: git
+  when: ansible_os_family == 'Darwin'
+  tags: dev
+
 - name: install development libraries (Mac)
   homebrew: name={{ item }} state=present
   with_items:
@@ -11,64 +32,20 @@
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-  #- name: unlink keg only
-  #command: brew unlink {{ item}}
-  #with_items:
-  #  - libxml2
-  #when: ansible_os_family == 'Darwin'
-
-- name: install dev CLI tools
-  homebrew: name={{ item }} state=present
-  with_items:
-    - heroku
-  when: ansible_os_family == 'Darwin'
-  tags: dev
-
-- name: install backing services (Mac)
-  homebrew: name={{ item }} state=present
-  with_items:
-    - redis
-    - memcached
-    - mysql
-      #- elasticsearch
-  when: ansible_os_family == 'Darwin'
-  tags: dev
-
 - name: Add development desktop tools
   homebrew_cask: name={{ item }} state=present
   with_items:
-    - pycharm
-    - sequel-pro
-    - phpstorm
-    - webstorm
-    - postico
-    - atom
     - ngrok
+    - visual-studio-code-insiders
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- name: Virtualization for dev
+- name: Virtualization softwares
   homebrew_cask: name={{ item }} state=present
   with_items:
     - virtualbox
-    - vmware-fusion
     - vagrant
     - docker
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- name: Add ideavimrc
-  copy:
-    src: ideavimrc
-    dest: ~/.ideavimrc
-  when: ansible_os_family == 'Darwin'
-  tags: dev
-
-# These are libraries that are installed but the Homebrew *module* fails on;
-# not Homebrew by itself. At the end b/c they will fail but that's okay.
-# They're here to track config until the problem can be identified and solved.
-#- name: install problem libraries (Mac)
-#  homebrew: name={{ item }} state=present
-#  with_items:
-#    - libgeoip
-#  when: ansible_os_family == 'Darwin'
