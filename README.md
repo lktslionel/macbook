@@ -17,7 +17,7 @@ $HOME/.macbook/macbook-manager
 ```
 
 You can customize the setup process to your conviniance by defining an ansible role.
-When that's done, you registry your role in the `[macbook-manager](https://github.com/lktslionel/macbook/blob/master/macbook-manager)`.
+When that's done, you registry your role in the [`macbook-manager`](https://github.com/lktslionel/macbook/blob/master/macbook-manager).
 
 ```bash
 #!/usr/bin/env ansible-playbook
