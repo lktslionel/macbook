@@ -4,5 +4,5 @@
 - hosts: localhost
   connection: local
   roles:
-    - role: dev
+    - dev
   

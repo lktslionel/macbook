@@ -1,22 +1,27 @@
 ---
 
-- role: homebrew
+- import_role: 
+    name: homebrew
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- role: zsh
+- import_role: 
+    name: zsh
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- role: common
+- import_role: 
+    name: common
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- role: docker
+- import_role: 
+    name: docker
   when: ansible_os_family == 'Darwin'
   tags: dev
 
-- role: git
+- import_role: 
+    name: git
   when: ansible_os_family == 'Darwin'
   tags: dev
 
@@ -36,7 +41,7 @@
   homebrew_cask: name={{ item }} state=present
   with_items:
     - ngrok
-    - visual-studio-code-insiders
+    - visual-studio-code
   when: ansible_os_family == 'Darwin'
   tags: dev
 
@@ -45,7 +50,7 @@
   with_items:
     - virtualbox
     - vagrant
-    - docker
+    # - docker
   when: ansible_os_family == 'Darwin'
   tags: dev
 
