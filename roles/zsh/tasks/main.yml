@@ -12,6 +12,15 @@
     state: directory
   tags: zsh
 
+- name: Download custom zsh plugins from git
+  ansible.builtin.git: 
+    repo: "{{ item.plugin_url }}"
+    dest: "{{ zsh_custom_dir }}/plugins/{{ item.plugin_name }}"
+  loop:
+    - plugin_name: zsh-autosuggestions
+      plugin_url: https://github.com/zsh-users/zsh-autosuggestions
+
+
 - name: Download additional zsh themes
   get_url: 
     url: "{{ item }}"

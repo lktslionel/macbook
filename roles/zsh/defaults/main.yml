@@ -12,8 +12,15 @@ zsh_plugins: # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview
   - github
   - docker
   - osx
-  - theme
+  - themes
   - vagrant
   - terraform
+  - command-not-found
+  
+  # Custom plugins
+  - zsh-autosuggestions
+  
 zsh_custom_entries: 
   - source $HOME/.profile
+
+zsh_custom_dir: "{{ lookup('env', 'ZSH_CUSTOM') | default('~/.oh-my-zsh/custom', True) }}"
