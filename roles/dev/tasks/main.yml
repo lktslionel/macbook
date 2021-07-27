@@ -37,6 +37,7 @@
     - mkcert
     - nss
     - bash-completion
+    - gh
   when: ansible_os_family == 'Darwin'
   tags: dev
 
