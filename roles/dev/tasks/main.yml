@@ -38,6 +38,7 @@
     - nss
     - bash-completion
     - gh
+    - cloc
   when: ansible_os_family == 'Darwin'
   tags: dev
 
