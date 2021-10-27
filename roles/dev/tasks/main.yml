@@ -39,6 +39,7 @@
     - bash-completion
     - gh
     - cloc
+    - lefthook
   when: ansible_os_family == 'Darwin'
   tags: dev
 
