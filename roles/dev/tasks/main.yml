@@ -49,6 +49,7 @@
   with_items:
     - ngrok
     - visual-studio-code
+    - raycast
   when: ansible_os_family == 'Darwin'
   tags: dev
 
